@@ -62,7 +62,7 @@ function App() {
                     Salva come bozza
                   </label>
                 </div>
-                <button className='btn btn-primary'>Invia</button>
+                <button className='btn btn-primary mt-2'>Invia</button>
                 {message && (<div className='alert alert-info mt-3' role='alert'>{message}</div>)}
               </form>
             </div>
