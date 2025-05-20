@@ -10,11 +10,15 @@ function App() {
     public: false
   })
 
+  const [message, setMessage] = useState('')
+
 
   const sendData = (e) => {
     e.preventDefault();
     axios.post('https://67c5b4f3351c081993fb1ab6.mockapi.io/api/posts', formData).then((resp) => {
-      console.log(resp.data); setFormData({
+      console.log(resp.data);
+      setMessage("Post inviato con successo!")
+      setFormData({
         title: "",
         author: "",
         body: "",
@@ -59,6 +63,7 @@ function App() {
                   </label>
                 </div>
                 <button className='btn btn-primary'>Invia</button>
+                {message && (<div className='alert alert-info mt-3' role='alert'>{message}</div>)}
               </form>
             </div>
 
